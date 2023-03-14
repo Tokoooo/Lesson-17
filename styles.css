@@ -1,0 +1,14 @@
+.bottom-section {
+    display: flex;
+    justify-content: space-between;
+}
+
+table, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    display: none;
+}
+
+.see-more-info {
+    display: block;
+}

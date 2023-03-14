@@ -1110,7 +1110,66 @@ const countries = [
     },
 ];
 
-let filterCountries = countries.map((item) => {
 
-    console.log(item)
-})
+
+function filterCountries () {
+
+    const seeMore = document.getElementById('more')
+
+    seeMore.addEventListener('click', () => {
+        alert('Javascript')
+    })
+    let country;
+    country = countries.map((countries) => {
+        return `<div class="card">
+                   <img src="${countries.flags.png}" alt="${countries.flags.alt}" >
+                   <h1>${countries.name.official}</h1>
+                   <div class="bottom-section">
+                      <div class="see-more">
+                            <button id="more">See More</button>
+                            <table>
+                                <tr>
+                                    <td>
+                                      Capital  
+                                   </td>
+                                   <td>
+                                      ${countries.capital}  
+                                   </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                      Area  
+                                   </td>
+                                   <td>
+                                      ${countries.area}  
+                                   </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                      Population  
+                                   </td>
+                                   <td>
+                                      ${countries.population}  
+                                   </td>
+                                </tr>
+                            </table>
+                      </div>
+                      <div class="remove-element">
+                            <button id="remove">Remove Element</button>
+                      </div>
+                  </div>
+               </div>`
+    })
+
+    let showContent = document.querySelector('.country')
+    showContent.innerHTML = country
+    showContent.style.display = 'flex'
+    showContent.style.justifyContent = 'center'
+    showContent.style.gap = '15px'
+}
+
+
+
+filterCountries()
+
+
